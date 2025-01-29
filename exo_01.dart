@@ -39,27 +39,52 @@ void protocoleBeta(String texte) {
 
 void protocoleGamma(String texte) {
   if (texte.startsWith('Cher')) {
-print ("Le texte débute par Cher");
-} 
-else {
-print ("Le texte ne débute pas par Cher");
+    print("Le texte débute par Cher");
+  } else {
+    print("Le texte ne débute pas par Cher");
+  }
+  if (texte.endsWith('Cordialement')) {
+    print("Le texte finit par Cordialement ");
+  } else {
+    print("Le texte ne finit pas par Cordialement");
+  }
+  texte = texte.replaceAll(r'\s+\', ' ');
+  texte = texte.trimLeft();
+  texte = texte.trimRight();
 }
-if (texte.endsWith('Cordialement')){
-  print ("Le texte finit par Cordialement ");
-}
-else{
-  print("Le texte ne finit pas par Cordialement");
-}
-texte = texte.replaceAll(r'\s+\',' ' );
-texte = texte.trimLeft();
-texte = texte.trimRight();
 
+void protocoleDelta(String texte) {
+  String texteMinuscule = texte.toLowerCase();
+  print(texteMinuscule);
+  String texteMajuscule = texte.toUpperCase();
+  print(texteMajuscule);
+  if (texte.trim().length > 43) {
+    print("La 43ème lettre est ${texte[42]}");
+  } else {
+    print("Le texte n'atteint pas 43 caractères");
+  }
 }
-  
 
-void protocoleDelta (String texte){
-  texte = texte.toLowerCase();
-  texte = texte.toUpperCase();
-   List texteList = texte.split("");
-   for
+void protocoleSecurite(texte) {
+  for (int i = 0; i <= texte.lenght; i++);
+}
+
+void main() {
+  String lettre = """ Cher agent X,
+
+
+
+J'ai aperçu le chat noir    au point de rendez-vous 7. L'agent Johnson était 
+
+également présent.    Le code secret 42 a été activé.
+
+
+
+Notre agent de liaison vous contactera à 23h.
+
+
+
+    Cordialement""";
+
+  analyserLettre(lettre);
 }
